@@ -4,6 +4,8 @@
 
 - Fix calculating rotation angle ([#982](https://github.com/hammerjs/hammer.js/pull/982))
 
+- Fix tests/manual/touchaction.html
+
 ### 2.0.8, 2016-04-22
 
 ##### Manager
