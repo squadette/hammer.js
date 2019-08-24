@@ -3,16 +3,17 @@
 
 
 ## Installation
-### NPM
+
+### Yarn
 ```sh
-npm install --save hammerjs
+yarn add @squadette/hammerjs
 ```
 
 **or**
 
-### Yarn
+### NPM
 ```sh
-yarn add hammerjs
+npm install --save @squadette/hammerjs
 ```
 
 **or**

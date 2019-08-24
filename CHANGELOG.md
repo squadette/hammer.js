@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.1.0
+
+No functional changes, prepare baseline for future changes.
+
 ### 2.0.8, 2016-04-22
 
 ##### Manager
