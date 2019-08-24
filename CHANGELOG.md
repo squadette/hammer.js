@@ -4,6 +4,8 @@
 
 - Fix rotation calculation to prevent 90 degree jump.
 
+Based on https://github.com/hammerjs/hammer.js/pull/982
+
 ### 2.1.0pre0
 
 No functional changes, prepare baseline for future changes.
