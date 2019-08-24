@@ -32,6 +32,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.1.1",
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
@@ -53,6 +54,7 @@
     "rollup-plugin-babel": "^3.0.4",
     "run-when-changed": "^2.1.0",
     "serve": "^1.4.0",
+    "size-limit": "^2.1.1",
     "uglify-js": "^3.4.0"
   },
   "main": "hammer.js",
@@ -71,6 +73,12 @@
     "watch": "run-when-changed --watch 'src/**/*.js' --watch 'tests/unit/*.js' --watch 'tests/unit/gestures/*.js' --exec 'yarn run watch-tasks'",
     "watch-tasks": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run jshint && yarn run jscs",
     "build": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run bannerize",
-    "test": "yarn run build && yarn run jshint && yarn run jscs && yarn run qunit"
-  }
+    "test": "yarn run build && yarn run jshint && yarn run jscs && yarn run qunit",
+    "size": "size-limit"
+  },
+    "size-limit": [
+        {
+            "path": "hammer.js"
+        }
+    ]
 }
