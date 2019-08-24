@@ -1,6 +1,10 @@
 # Changelog
 
-### 2.1.0
+### 2.1.0pre1
+
+- Fix rotation calculation to prevent 90 degree jump.
+
+### 2.1.0pre0
 
 No functional changes, prepare baseline for future changes.
 
