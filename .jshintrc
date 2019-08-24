@@ -38,5 +38,6 @@
   "-W116": true,
   "-W080": true,
   "-W038": true,
+  "-W078": true,
   "proto": true
 }
