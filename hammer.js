@@ -1,4 +1,4 @@
-/*! Hammer.JS - v2.1.0-pre0 - 2019-08-24
+/*! Hammer.JS - v2.1.0-pre1 - 2019-08-24
  * http://hammerjs.github.io/
  *
  * Copyright (c)  Jorik Tangelder;
@@ -2779,7 +2779,7 @@ var Hammer = function Hammer(element, options) {
   options.recognizers = ifUndefined(options.recognizers, Hammer.defaults.preset);
   return new Manager(element, options);
 };
-Hammer.VERSION = '2.1.0-pre0';
+Hammer.VERSION = '2.1.0-pre1';
 
 /**
  * @private

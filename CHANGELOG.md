@@ -6,6 +6,10 @@
 
 Based on https://github.com/hammerjs/hammer.js/pull/982
 
+NB: https://github.com/hammerjs/hammer.js/pull/1136 fixes the same
+issue, but also supposedly takes into account changing order of
+pointers.  However, if you apply it, the tests break.
+
 ### 2.1.0pre0
 
 No functional changes, prepare baseline for future changes.
