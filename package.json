@@ -1,8 +1,8 @@
 {
-  "name": "hammerjs",
+  "name": "@squadette/hammerjs",
   "title": "Hammer.JS",
   "description": "A javascript library for multi-touch gestures",
-  "version": "2.0.8",
+  "version": "2.1.0-pre0",
   "homepage": "http://hammerjs.github.io/",
   "license": "MIT",
   "keywords": [
