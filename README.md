@@ -85,8 +85,8 @@ Feel encouraged to report issues or submit pull requests. When you're ready to d
 
 [hammerjs-url]: http://hammerjs.github.io
 
-[npm-image]: https://img.shields.io/npm/v/hammerjs.svg
-[npm-url]: https://npmjs.org/package/hammerjs
+[npm-image]: https://img.shields.io/npm/v/@squadette/hammerjs.svg
+[npm-url]: https://npmjs.org/package/@squadette/hammerjs
 
 [travis-image]: https://travis-ci.org/squadette/hammer.js.svg?branch=master
 [travis-url]: https://travis-ci.org/squadette/hammer.js
