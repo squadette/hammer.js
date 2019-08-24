@@ -68,8 +68,8 @@
     "jshint": "jshint src/**/*.js tests/unit/*.js tests/unit/gestures/*.js --config .jshintrc --verbose --reporter=node_modules/jshint-stylish",
     "jscs": " jscs src/**/*.js tests/unit/*.js tests/unit/gestures/*.js --config=./.jscsrc",
     "qunit": "phantomjs node_modules/qunit-phantomjs-runner/runner-list.js tests/unit/index.html 15",
-    "watch": "run-when-changed --watch 'src/**/*.js' --watch 'tests/unit/*.js' --watch 'tests/unit/gestures/*.js' --exec 'npm run watch-tasks'",
-    "watch-tasks": "npm run rollup && npm run string-replace && npm run uglify && npm run jshint && npm run jscs",
+    "watch": "run-when-changed --watch 'src/**/*.js' --watch 'tests/unit/*.js' --watch 'tests/unit/gestures/*.js' --exec 'yarn run watch-tasks'",
+    "watch-tasks": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run jshint && yarn run jscs",
     "build": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run bannerize",
     "test": "yarn run build && yarn run jshint && yarn run jscs && yarn run qunit"
   }
