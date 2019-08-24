@@ -91,8 +91,8 @@ Feel encouraged to report issues or submit pull requests. When you're ready to d
 [travis-image]: https://travis-ci.org/squadette/hammer.js.svg?branch=master
 [travis-url]: https://travis-ci.org/squadette/hammer.js
 
-[downloads-image]: https://img.shields.io/npm/dm/hammerjs.svg
-[downloads-url]: https://npmjs.org/package/hammerjs
+[downloads-image]: https://img.shields.io/npm/dm/@squadette/hammerjs.svg
+[downloads-url]: https://npmjs.org/package/@squadette/hammerjs
 
 
 <!-- Examples -->
