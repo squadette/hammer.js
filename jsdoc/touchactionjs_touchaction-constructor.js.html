@@ -448,7 +448,7 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="input_mouse.js.html">Source: input/mouse.js</h1>
+        <h1 class="page-title" data-filename="touchactionjs_touchaction-constructor.js.html">Source: touchactionjs/touchaction-constructor.js</h1>
         
 
 
@@ -456,70 +456,128 @@
     <section>
         <article>
             <pre class="prettyprint source"><code>import {
-    INPUT_START,
-    INPUT_MOVE,
-    INPUT_END,
-    INPUT_TYPE_MOUSE
+    TOUCH_ACTION_COMPUTE,
+    TOUCH_ACTION_MAP,
+    NATIVE_TOUCH_ACTION,
+    PREFIXED_TOUCH_ACTION,
+    TOUCH_ACTION_NONE,
+    TOUCH_ACTION_PAN_X,
+    TOUCH_ACTION_PAN_Y
+} from './touchaction-Consts';
+import {
+    DIRECTION_VERTICAL,
+    DIRECTION_HORIZONTAL
 } from '../inputjs/input-consts';
-import Input from '../inputjs/input-constructor';
-
-const MOUSE_INPUT_MAP = {
-  mousedown: INPUT_START,
-  mousemove: INPUT_MOVE,
-  mouseup: INPUT_END
-};
-
-const MOUSE_ELEMENT_EVENTS = 'mousedown';
-const MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+import each from '../utils/each';
+import boolOrFn from '../utils/bool-or-fn';
+import inStr from '../utils/in-str';
+import cleanTouchActions from './clean-touch-actions';
 
 /**
  * @private
- * Mouse events input
+ * Touch Action
+ * sets the touchAction property or uses the js alternative
+ * @param {Manager} manager
+ * @param {String} value
  * @constructor
- * @extends Input
  */
-export default class MouseInput extends Input {
-  constructor() {
-    super(...arguments);
-
-    this.evEl = MOUSE_ELEMENT_EVENTS;
-    this.evWin = MOUSE_WINDOW_EVENTS;
-
-    this.pressed = false; // mousedown state
+export default class TouchAction {
+  constructor(manager, value) {
+    this.manager = manager;
+    this.set(value);
   }
 
   /**
    * @private
-   * handle mouse events
-   * @param {Object} ev
+   * set the touchAction value on the element or enable the polyfill
+   * @param {String} value
    */
-  handler(ev) {
-    let eventType = MOUSE_INPUT_MAP[ev.type];
-
-    // on start we want to have the left mouse button down
-    if (eventType &amp; INPUT_START &amp;&amp; ev.button === 0) {
-      this.pressed = true;
+  set(value) {
+    // find out the touch-action by the event handlers
+    if (value === TOUCH_ACTION_COMPUTE) {
+      value = this.compute();
     }
 
-    if (eventType &amp; INPUT_MOVE &amp;&amp; ev.which !== 1) {
-      eventType = INPUT_END;
+    if (NATIVE_TOUCH_ACTION &amp;&amp; this.manager.element.style &amp;&amp; TOUCH_ACTION_MAP[value]) {
+      this.manager.element.style[PREFIXED_TOUCH_ACTION] = value;
     }
+    this.actions = value.toLowerCase().trim();
+  }
 
-    // mouse must be down
-    if (!this.pressed) {
+  /**
+   * @private
+   * just re-set the touchAction value
+   */
+  update() {
+    this.set(this.manager.options.touchAction);
+  }
+
+  /**
+   * @private
+   * compute the value for the touchAction property based on the recognizer's settings
+   * @returns {String} value
+   */
+  compute() {
+    let actions = [];
+    each(this.manager.recognizers, (recognizer) => {
+      if (boolOrFn(recognizer.options.enable, [recognizer])) {
+        actions = actions.concat(recognizer.getTouchAction());
+      }
+    });
+    return cleanTouchActions(actions.join(' '));
+  }
+
+  /**
+   * @private
+   * this method is called on each input cycle and provides the preventing of the browser behavior
+   * @param {Object} input
+   */
+  preventDefaults(input) {
+    let { srcEvent } = input;
+    let direction = input.offsetDirection;
+
+    // if the touch action did prevented once this session
+    if (this.manager.session.prevented) {
+      srcEvent.preventDefault();
       return;
     }
 
-    if (eventType &amp; INPUT_END) {
-      this.pressed = false;
+    let { actions } = this;
+    let hasNone = inStr(actions, TOUCH_ACTION_NONE) &amp;&amp; !TOUCH_ACTION_MAP[TOUCH_ACTION_NONE];
+    let hasPanY = inStr(actions, TOUCH_ACTION_PAN_Y) &amp;&amp; !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_Y];
+    let hasPanX = inStr(actions, TOUCH_ACTION_PAN_X) &amp;&amp; !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_X];
+
+    if (hasNone) {
+      // do not prevent defaults if this is a tap gesture
+      let isTapPointer = input.pointers.length === 1;
+      let isTapMovement = input.distance &lt; 2;
+      let isTapTouchTime = input.deltaTime &lt; 250;
+
+      if (isTapPointer &amp;&amp; isTapMovement &amp;&amp; isTapTouchTime) {
+        return;
+      }
     }
 
-    this.callback(this.manager, eventType, {
-      pointers: [ev],
-      changedPointers: [ev],
-      pointerType: INPUT_TYPE_MOUSE,
-      srcEvent: ev
-    });
+    if (hasPanX &amp;&amp; hasPanY) {
+      // `pan-x pan-y` means browser handles all scrolling/panning, do not prevent
+      return;
+    }
+
+    if (hasNone ||
+        (hasPanY &amp;&amp; direction &amp; DIRECTION_HORIZONTAL) ||
+        (hasPanX &amp;&amp; direction &amp; DIRECTION_VERTICAL)) {
+      return this.preventSrc(srcEvent);
+    }
+  }
+
+  /**
+   * @private
+   * call preventDefault to prevent the browser's default behavior (scrolling in most cases)
+   * @param {Object} srcEvent
+   */
+  preventSrc(srcEvent) {
+    this.manager.session.prevented = true;
+    srcEvent.preventDefault();
   }
 }
 </code></pre>

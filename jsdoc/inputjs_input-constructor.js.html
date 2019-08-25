@@ -448,78 +448,70 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="input_mouse.js.html">Source: input/mouse.js</h1>
+        <h1 class="page-title" data-filename="inputjs_input-constructor.js.html">Source: inputjs/input-constructor.js</h1>
         
 
 
     
     <section>
         <article>
-            <pre class="prettyprint source"><code>import {
-    INPUT_START,
-    INPUT_MOVE,
-    INPUT_END,
-    INPUT_TYPE_MOUSE
-} from '../inputjs/input-consts';
-import Input from '../inputjs/input-constructor';
-
-const MOUSE_INPUT_MAP = {
-  mousedown: INPUT_START,
-  mousemove: INPUT_MOVE,
-  mouseup: INPUT_END
-};
-
-const MOUSE_ELEMENT_EVENTS = 'mousedown';
-const MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+            <pre class="prettyprint source"><code>import boolOrFn from '../utils/bool-or-fn';
+import addEventListeners from '../utils/add-event-listeners';
+import removeEventListeners from '../utils/remove-event-listeners';
+import getWindowForElement from '../utils/get-window-for-element';
 
 /**
  * @private
- * Mouse events input
+ * create new input type manager
+ * @param {Manager} manager
+ * @param {Function} callback
+ * @returns {Input}
  * @constructor
- * @extends Input
  */
-export default class MouseInput extends Input {
-  constructor() {
-    super(...arguments);
+export default class Input {
+  constructor(manager, callback) {
+    let self = this;
+    this.manager = manager;
+    this.callback = callback;
+    this.element = manager.element;
+    this.target = manager.options.inputTarget;
 
-    this.evEl = MOUSE_ELEMENT_EVENTS;
-    this.evWin = MOUSE_WINDOW_EVENTS;
+    // smaller wrapper around the handler, for the scope and the enabled state of the manager,
+    // so when disabled the input events are completely bypassed.
+    this.domHandler = function(ev) {
+      if (boolOrFn(manager.options.enable, [manager])) {
+        self.handler(ev);
+      }
+    };
 
-    this.pressed = false; // mousedown state
+    this.init();
+
+  }
+  /**
+   * @private
+   * should handle the inputEvent data and trigger the callback
+   * @virtual
+   */
+  handler() { }
+
+  /**
+   * @private
+   * bind the events
+   */
+  init() {
+    this.evEl &amp;&amp; addEventListeners(this.element, this.evEl, this.domHandler);
+    this.evTarget &amp;&amp; addEventListeners(this.target, this.evTarget, this.domHandler);
+    this.evWin &amp;&amp; addEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
   }
 
   /**
    * @private
-   * handle mouse events
-   * @param {Object} ev
+   * unbind the events
    */
-  handler(ev) {
-    let eventType = MOUSE_INPUT_MAP[ev.type];
-
-    // on start we want to have the left mouse button down
-    if (eventType &amp; INPUT_START &amp;&amp; ev.button === 0) {
-      this.pressed = true;
-    }
-
-    if (eventType &amp; INPUT_MOVE &amp;&amp; ev.which !== 1) {
-      eventType = INPUT_END;
-    }
-
-    // mouse must be down
-    if (!this.pressed) {
-      return;
-    }
-
-    if (eventType &amp; INPUT_END) {
-      this.pressed = false;
-    }
-
-    this.callback(this.manager, eventType, {
-      pointers: [ev],
-      changedPointers: [ev],
-      pointerType: INPUT_TYPE_MOUSE,
-      srcEvent: ev
-    });
+  destroy() {
+    this.evEl &amp;&amp; removeEventListeners(this.element, this.evEl, this.domHandler);
+    this.evTarget &amp;&amp; removeEventListeners(this.target, this.evTarget, this.domHandler);
+    this.evWin &amp;&amp; removeEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
   }
 }
 </code></pre>
