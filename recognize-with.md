@@ -16,4 +16,4 @@ pinch.recognizeWith(rotate);
 Now Hammer is able to run pinch and rotate the same time. You can also separate them with the `dropRecognizeWith()` method on
 the recognizer instance.
 
-**[View an example implementation.](https://cdn.rawgit.com/hammerjs/hammer.js/master/tests/manual/visual.html)**
+**[View an example implementation.]({{site.baseurl}}/dist/tests/manual/visual.html)**

@@ -20,7 +20,7 @@ var vertical = new Hammer.Pan({
 });
 vertical.requireFailure(horizontal);
 ````
-**[View an example implementation.](https://cdn.rawgit.com/hammerjs/hammer.js/master/tests/manual/nested.html)**
+**[View an example implementation.]({{site.baseurl}}/dist/tests/manual/nested.html)**
 
 ## Using requireFailure to recognize multiple taps
 

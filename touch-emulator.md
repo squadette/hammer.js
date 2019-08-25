@@ -52,6 +52,5 @@ javascript:!function(a){var b=a.createElement("script");b.onload=function(){Touc
 Download the script from the repo, or just run `bower install hammer-touchemulator`.
 
 - [GitHub.com/hammerjs/touchemulator](https://github.com/hammerjs/touchemulator)
-- [Example with Hammer.js](http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/hammer.html)
-- [Example with Leaflet Maps](http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/leaflet.html)
-
+- [Example with Hammer.js]({{site.baseurl}}/dist/tests/manual/hammer.html)
+- [Example with Leaflet Maps]({{site.baseurl}}/dist/tests/manual/leaflet.html)
