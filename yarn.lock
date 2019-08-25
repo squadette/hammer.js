@@ -322,13 +322,13 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-cli@0.6.x:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/cli/-/cli-0.6.6.tgz#02ad44a380abf27adac5e6f0cdd7b043d74c53e3"
-  integrity sha1-Aq1Eo4Cr8nraxebwzdewQ9dMU+M=
+cli@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli/-/cli-1.0.1.tgz#22817534f24bfa4950c34d532d48ecbc621b8c14"
+  integrity sha1-IoF1NPJL+klQw01TLUjsvGIbjBQ=
   dependencies:
     exit "0.1.2"
-    glob "~ 3.2.1"
+    glob "^7.1.1"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -903,7 +903,7 @@ git-tools@0.1.0:
   resolved "https://registry.yarnpkg.com/git-tools/-/git-tools-0.1.0.tgz#42709aabce667e87ee789f8167dbe0191db9a10b"
   integrity sha1-QnCaq85mfofueJ+BZ9vgGR25oQs=
 
-glob@^7.0.5, glob@^7.1.3:
+glob@^7.0.5, glob@^7.1.1, glob@^7.1.3:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
   integrity sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==
@@ -915,14 +915,6 @@ glob@^7.0.5, glob@^7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-"glob@~ 3.2.1", glob@~3.2.9:
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-3.2.11.tgz#4a973f635b9190f715d10987d5c00fd2815ebe3d"
-  integrity sha1-Spc/Y1uRkPcV0QmH1cAP0oFevj0=
-  dependencies:
-    inherits "2"
-    minimatch "0.3"
-
 glob@~3.1.21:
   version "3.1.21"
   resolved "https://registry.yarnpkg.com/glob/-/glob-3.1.21.tgz#d29e0a055dea5138f4d07ed40e8982e83c2066cd"
@@ -931,6 +923,14 @@ glob@~3.1.21:
     graceful-fs "~1.2.0"
     inherits "1"
     minimatch "~0.2.11"
+
+glob@~3.2.9:
+  version "3.2.11"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-3.2.11.tgz#4a973f635b9190f715d10987d5c00fd2815ebe3d"
+  integrity sha1-Spc/Y1uRkPcV0QmH1cAP0oFevj0=
+  dependencies:
+    inherits "2"
+    minimatch "0.3"
 
 glob@~4.0.0:
   version "4.0.6"
@@ -1022,13 +1022,13 @@ grunt-contrib-connect@0.7.x:
     open "0.0.4"
     portscanner "0.2.2"
 
-grunt-contrib-jshint@0.10.x:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-jshint/-/grunt-contrib-jshint-0.10.0.tgz#57ebccca87e8f327af6645d8a3c586d4845e4d81"
-  integrity sha1-V+vMyofo8yevZkXYo8WG1IReTYE=
+grunt-contrib-jshint@~0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-jshint/-/grunt-contrib-jshint-0.12.0.tgz#f6b2f06fc715264837a7ab6c69a1ce1a689c2c29"
+  integrity sha1-9rLwb8cVJkg3p6tsaaHOGmicLCk=
   dependencies:
-    hooker "~0.2.3"
-    jshint "~2.5.0"
+    hooker "^0.2.3"
+    jshint "~2.9.1"
 
 grunt-contrib-qunit@^0.5.1:
   version "0.5.2"
@@ -1257,7 +1257,7 @@ homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
-hooker@~0.2.3:
+hooker@^0.2.3, hooker@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/hooker/-/hooker-0.2.3.tgz#b834f723cc4a242aa65963459df6d984c5d3d959"
   integrity sha1-uDT3I8xKJCqmWWNFnfbZhMXT2Vk=
@@ -1567,19 +1567,19 @@ jscs@~1.7.2:
     vow-fs "~0.3.1"
     xmlbuilder "~2.4.0"
 
-jshint@~2.5.0:
-  version "2.5.11"
-  resolved "https://registry.yarnpkg.com/jshint/-/jshint-2.5.11.tgz#e2d95858bbb1aa78300108a2e81099fb095622e0"
-  integrity sha1-4tlYWLuxqngwAQii6BCZ+wlWIuA=
+jshint@~2.9.1:
+  version "2.9.7"
+  resolved "https://registry.yarnpkg.com/jshint/-/jshint-2.9.7.tgz#038a3fa5c328fa3ab03ddfd85df88d3d87bedcbd"
+  integrity sha512-Q8XN38hGsVQhdlM+4gd1Xl7OB1VieSuCJf+fEJjpo59JH99bVJhXRXAh26qQ15wfdd1VPMuDWNeSWoNl53T4YA==
   dependencies:
-    cli "0.6.x"
+    cli "~1.0.0"
     console-browserify "1.1.x"
     exit "0.1.x"
     htmlparser2 "3.8.x"
-    minimatch "1.0.x"
+    lodash "~4.17.10"
+    minimatch "~3.0.2"
     shelljs "0.3.x"
     strip-json-comments "1.0.x"
-    underscore "1.6.x"
 
 json-schema@0.2.3:
   version "0.2.3"
@@ -1689,7 +1689,7 @@ lodash@^2.4.1, lodash@~2.4.1:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
   integrity sha1-+t2DS5aDBz2hebPq5tnA0VBT9z4=
 
-lodash@^4.17.14:
+lodash@^4.17.14, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -1821,7 +1821,7 @@ minimatch@0.3:
     lru-cache "2"
     sigmund "~1.0.0"
 
-minimatch@1.0.x, minimatch@^1.0.0, minimatch@~1.0.0:
+minimatch@^1.0.0, minimatch@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-1.0.0.tgz#e0dd2120b49e1b724ce8d714c520822a9438576d"
   integrity sha1-4N0hILSeG3JM6NcUxSCCKpQ4V20=
@@ -1829,7 +1829,7 @@ minimatch@1.0.x, minimatch@^1.0.0, minimatch@~1.0.0:
     lru-cache "2"
     sigmund "~1.0.0"
 
-minimatch@^3.0.4:
+minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
@@ -2769,11 +2769,6 @@ underscore.string@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-2.4.0.tgz#8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b"
   integrity sha1-jN2PusTi0uoefi6Al8QvRCKA+Fs=
-
-underscore@1.6.x:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8"
-  integrity sha1-izixDKze9jM3uLJOT/htRa6lKag=
 
 underscore@~1.7.0:
   version "1.7.0"
