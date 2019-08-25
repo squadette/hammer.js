@@ -1,6 +1,6 @@
-# Hammer.js 2.0.6
+# Hammer.js 2.1.0-pre2
 
-[![Build Status](https://travis-ci.org/hammerjs/hammer.js.svg)](https://travis-ci.org/hammerjs/hammer.js)
+[![Build Status](https://travis-ci.org/squadette/hammer.js.svg)](https://travis-ci.org/squadette/hammer.js)
 
 ## Support, Questions, and Collaboration
 
@@ -8,7 +8,7 @@
 
 ## Documentation
 
-Visit [hammerjs.github.io](http://hammerjs.github.io) for detailed documentation.
+Visit [squadette.github.io/hammer.js](http://squadette.github.io/hammer.js) for detailed documentation.
 
 ```js
 // get a reference to an element
