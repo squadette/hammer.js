@@ -4,7 +4,7 @@ release:
 		ln -f hammer-time.js ../../dist/hammer-time.js
 	cd node_modules/hammerjs && \
 		yarn install && \
-		yarn build && \
+		yarn run grunt build && \
 		ln -f hammer.js ../../dist/hammer.js && \
 		ln -f hammer.min.js ../../dist/hammer.min.js && \
 		ln -f hammer.min.map ../../dist/hammer.min.map && \

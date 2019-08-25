@@ -952,130 +952,347 @@
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="recognizers_tap.js.html">Source: recognizers/tap.js</h1>
+        <h1 class="page-title" data-filename="MouseInput.html">Class: MouseInput</h1>
         
 
 
+
+<section>
     
-    <section>
-        <article>
-            <pre class="prettyprint source"><code>/**
- * A tap is ecognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
- * between the given interval and position. The delay option can be used to recognize multi-taps without firing
- * a single tap.
- *
- * The eventData from the emitted event contains the property `tapCount`, which contains the amount of
- * multi-taps being recognized.
- * @constructor
- * @extends Recognizer
- */
-function TapRecognizer() {
-    Recognizer.apply(this, arguments);
+<header>
+    <h2>
+    MouseInput
+    </h2>
+    
+</header>  
 
-    // previous time and center,
-    // used for tap counting
-    this.pTime = false;
-    this.pCenter = false;
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="MouseInput">
+            
+            new MouseInput<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="input_mouse.js.html">input/mouse.js</a>, <a href="input_mouse.js.html#line15">line 15</a>
+        </div>
+        
+    </div>
 
-    this._timer = null;
-    this._input = null;
-    this.count = 0;
-}
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Mouse events input</p>
+    </div>
+    
 
-inherit(TapRecognizer, Recognizer, {
-    /**
-     * @namespace
-     * @memberof PinchRecognizer
-     */
-    defaults: {
-        event: 'tap',
-        pointers: 1,
-        taps: 1,
-        interval: 300, // max time between the multi-tap taps
-        time: 250, // max time of the pointer to be down (like finger on the screen)
-        threshold: 9, // a minimal movement is ok, but keep it low
-        posThreshold: 10 // a multi-tap can be a bit off the initial position
-    },
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
-    getTouchAction: function() {
-        return [TOUCH_ACTION_MANIPULATION];
-    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-    process: function(input) {
-        var options = this.options;
+    
+    
 
-        var validPointers = input.pointers.length === options.pointers;
-        var validMovement = input.distance &lt; options.threshold;
-        var validTouchTime = input.deltaTime &lt; options.time;
+    
 
-        this.reset();
+    
+    
+    
+    
+    
+    
+    
+</dd>
 
-        if ((input.eventType &amp; INPUT_START) &amp;&amp; (this.count === 0)) {
-            return this.failTimeout();
-        }
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="Input.html">Input</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer inherited">
+        <h4 class="name" id="destroy">
+            
+                <span class="inherited"><a href="Input.html#destroy">inherited</a></span>
+            
+            destroy<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="input.js.html">input.js</a>, <a href="input.js.html#line77">line 77</a>
+        </div>
+        
+    </div>
 
-        // we only allow little movement
-        // and we've reached an end event, so a tap is possible
-        if (validMovement &amp;&amp; validTouchTime &amp;&amp; validPointers) {
-            if (input.eventType != INPUT_END) {
-                return this.failTimeout();
-            }
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>unbind the events</p>
+    </div>
+    
 
-            var validInterval = this.pTime ? (input.timeStamp - this.pTime &lt; options.interval) : true;
-            var validMultiTap = !this.pCenter || getDistance(this.pCenter, input.center) &lt; options.posThreshold;
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
-            this.pTime = input.timeStamp;
-            this.pCenter = input.center;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-            if (!validMultiTap || !validInterval) {
-                this.count = 1;
-            } else {
-                this.count += 1;
-            }
+    
+    
 
-            this._input = input;
+    
 
-            // if tap count matches we have recognized it,
-            // else it has began recognizing...
-            var tapCount = this.count % options.taps;
-            if (tapCount === 0) {
-                // no failing requirements, immediately trigger the tap event
-                // or wait as long as the multitap interval to trigger
-                if (!this.hasRequireFailures()) {
-                    return STATE_RECOGNIZED;
-                } else {
-                    this._timer = setTimeoutContext(function() {
-                        this.state = STATE_RECOGNIZED;
-                        this.tryEmit();
-                    }, options.interval, this);
-                    return STATE_BEGAN;
-                }
-            }
-        }
-        return STATE_FAILED;
-    },
+    
+    
+    
+    
+    
+    
+    
+</dd>
 
-    failTimeout: function() {
-        this._timer = setTimeoutContext(function() {
-            this.state = STATE_FAILED;
-        }, this.options.interval, this);
-        return STATE_FAILED;
-    },
+        
+            
+<dt>
+    <div class="nameContainer inherited">
+        <h4 class="name" id="handler">
+            
+                <span class="inherited"><a href="Input.html#handler">inherited</a></span>
+            
+            <span class="type-signature ">abstract</span>handler<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="input.js.html">input.js</a>, <a href="input.js.html#line63">line 63</a>
+        </div>
+        
+    </div>
 
-    reset: function() {
-        clearTimeout(this._timer);
-    },
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>should handle the inputEvent data and trigger the callback</p>
+    </div>
+    
 
-    emit: function() {
-        if (this.state == STATE_RECOGNIZED) {
-            this._input.tapCount = this.count;
-            this.manager.emit(this.options.event, this._input);
-        }
-    }
-});
-</code></pre>
-        </article>
-    </section>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer inherited">
+        <h4 class="name" id="init">
+            
+                <span class="inherited"><a href="Input.html#init">inherited</a></span>
+            
+            init<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="input.js.html">input.js</a>, <a href="input.js.html#line68">line 68</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>bind the events</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
 
 
 
