@@ -1,6 +1,6 @@
 # Changelog
 
-### 2.1.0pre1
+### 2.1.0pre1, 2019-08-25
 
 - Fix rotation calculation to prevent 90 degree jump.
 
@@ -15,7 +15,7 @@ pointers.  However, if you apply it, the tests break.
 - Updated and fixed documentation is at
   [https://squadette.github.io/hammer.js/](https://squadette.github.io/hammer.js/);
 
-### 2.1.0pre0
+### 2.1.0pre0, 2019-08-24
 
 No functional changes, prepare baseline for future changes.
 
