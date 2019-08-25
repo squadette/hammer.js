@@ -5,17 +5,22 @@ title: Changelog
 
 # Changelog
 
-### 2.1.0pre1
+### 2.1.0pre1, 2019-08-25
 
 - Fix rotation calculation to prevent 90 degree jump.
 
-Based on https://github.com/hammerjs/hammer.js/pull/982
+Based on [#982](https://github.com/hammerjs/hammer.js/pull/982)
 
-NB: https://github.com/hammerjs/hammer.js/pull/1136 fixes the same
+NB: [#1136](https://github.com/hammerjs/hammer.js/pull/1136) fixes the same
 issue, but also supposedly takes into account changing order of
 pointers.  However, if you apply it, the tests break.
 
-### 2.1.0pre0
+- Fixed visual.html and touchaction.html manual test pages;
+
+- Updated and fixed documentation is at
+  [https://squadette.github.io/hammer.js/](https://squadette.github.io/hammer.js/);
+
+### 2.1.0pre0, 2019-08-24
 
 No functional changes, prepare baseline for future changes.
 
@@ -23,7 +28,7 @@ No functional changes, prepare baseline for future changes.
 
 ##### Manager
 - Added check to ensure that the required parameters are present ([#908](https://github.com/hammerjs/hammer.js/issues/908), [085d3a8](https://github.com/hammer.js/hammerjs/commit/085d3a87eab8674c45e9d3a14c4ca44ad7b97e26))
-- Fixed restoration of Hammer.defaults.cssProps on destory ([#904theregttr5ki](https://github.com/hammerjs/hammer.js/issues/904), [7d0e60f](https://github.com/hammer.js/hammerjs/commit/7d0e60f6743517db3c05a38e966fb9fb5052fa03))
+- Fixed restoration of Hammer.defaults.cssProps on destory ([#904](https://github.com/hammerjs/hammer.js/issues/904), [7d0e60f](https://github.com/hammer.js/hammerjs/commit/7d0e60f6743517db3c05a38e966fb9fb5052fa03))
 
 ##### Input
 - Fixed de-duping of mouse events on mouse touch combo devices ([#917](https://github.com/hammer.js/hammer.js/issues/917), [#863](https://github.com/hammerjs/hammer.js/issues/863), [bfeb89a](https://github.com/hammerjs/hammerjs/commit/bfeb89a77f778c527f771150d1e9687bd318ce8d))
