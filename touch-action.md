@@ -17,7 +17,7 @@ to the Manager.
 When you set the touchAction to `auto` it doesn't prevent any defaults, and Hammer would probably break. You have to
 call `preventDefault` manually to fix this. You should only use this if you know what you're doing.
 
-**[View the touch-action test.](https://cdn.rawgit.com/hammerjs/hammer.js/master/tests/manual/touchaction.html)**
+**[View the touch-action test.]({{site.baseurl}/dist/tests/manual/touchaction.html)**
 
 ### Preferred touch-action values per gesture
 If you _do_ want to set your own value, then the table below should help you a bit...
