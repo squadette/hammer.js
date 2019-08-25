@@ -7,7 +7,7 @@
     },
     "devDependencies": {
         "jaguarjs-jsdoc": "git://github.com/davidshimjs/jaguarjs-jsdoc#master",
-        "hammerjs": "git://github.com/hammerjs/hammer.js#master",
+        "hammerjs": "git://github.com/squadette/hammer.js#master",
         "hammer-timejs": "git://github.com/hammerjs/hammer-time#master",
         "jsdoc": "3.4.0",
         "marked": "0.3.5",

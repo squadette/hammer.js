@@ -405,9 +405,9 @@ gzip-size@3.0.0:
   version "1.1.0"
   resolved "git://github.com/hammerjs/hammer-time#11d9c63b4750cdf8b93d78e1528d5605957e2609"
 
-"hammerjs@git://github.com/hammerjs/hammer.js#master":
-  version "2.0.8"
-  resolved "git://github.com/hammerjs/hammer.js#ff687ea0daa3c806b9accd2ecb1a46165ea3c00a"
+"hammerjs@git://github.com/squadette/hammer.js#master":
+  version "2.1.0-pre1"
+  resolved "git://github.com/squadette/hammer.js#d0e5e6f9ce616fa451b3ae00bf6ea779f09492af"
 
 har-schema@^2.0.0:
   version "2.0.0"
