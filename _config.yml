@@ -1,5 +1,5 @@
 # Site settings
-title: @squadette/hammerjs
+title: "@squadette/hammerjs"
 email: j.tangelder@gmail.com
 description: "Add multi-touch gestures to your webpage."
 baseurl: "/hammer.js"
