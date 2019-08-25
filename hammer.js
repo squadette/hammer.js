@@ -1,5 +1,5 @@
-/*! Hammer.JS - v2.0.8 - 2019-08-25
- * http://hammerjs.github.io/
+/*! Hammer.JS - v2.1.0-pre2 - 2019-08-25
+ * http://squadette.github.io/hammer.js/
  *
  * Copyright (c) 2019 Jorik Tangelder;
  * Licensed under the MIT license */
@@ -2145,7 +2145,7 @@ function Hammer(element, options) {
 /**
  * @const {string}
  */
-Hammer.VERSION = '2.0.8';
+Hammer.VERSION = '2.1.0-pre2';
 
 /**
  * default settings
