@@ -3,7 +3,7 @@
   "title": "Hammer.JS",
   "description": "A javascript library for multi-touch gestures",
   "version": "2.1.0-pre1",
-  "homepage": "http://hammerjs.github.io/",
+  "homepage": "https://github.com/squadette/hammer.js",
   "license": "MIT",
   "keywords": [
     "touch",
@@ -36,7 +36,6 @@
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
-    "bannerize": "^1.0.2",
     "blanket": "^1.2.3",
     "changelogplease": "^1.2.0",
     "ember-suave": "^4.0.0",
@@ -62,17 +61,16 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "bannerize": "bannerize hammer.js hammer.min.js",
     "connect": "serve -p 8000 ./",
     "rollup": "rollup -c",
-    "uglify": "uglifyjs hammer.js --source-map \"filename=hammer.min.js.map\" -o hammer.min.js --timings",
+    "uglify": "uglifyjs hammer.js --source-map \"filename=hammer.min.js.map\" -o hammer.min.js --comments /^!/ --timings",
     "string-replace": "node string-replace.js",
     "jshint": "jshint src/**/*.js tests/unit/*.js tests/unit/gestures/*.js --config .jshintrc --verbose --reporter=node_modules/jshint-stylish",
     "jscs": " jscs src/**/*.js tests/unit/*.js tests/unit/gestures/*.js --config=./.jscsrc",
     "qunit": "phantomjs node_modules/qunit-phantomjs-runner/runner-list.js tests/unit/index.html 15",
     "watch": "run-when-changed --watch 'src/**/*.js' --watch 'tests/unit/*.js' --watch 'tests/unit/gestures/*.js' --exec 'yarn run watch-tasks'",
     "watch-tasks": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run jshint && yarn run jscs",
-    "build": "yarn run rollup && yarn run string-replace && yarn run uglify && yarn run bannerize",
+    "build": "yarn run rollup && yarn run string-replace && yarn run uglify",
     "test": "yarn run build && yarn run jshint && yarn run jscs && yarn run qunit",
     "size": "size-limit"
   },

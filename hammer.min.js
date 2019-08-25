@@ -1,5 +1,5 @@
-/*! Hammer.JS - v2.1.0-pre1 - 2019-08-25
- * http://hammerjs.github.io/
+/*! @squadette/hammerjs - v2.1.0-pre1 - 2019-08-25
+ * https://github.com/squadette/hammer.js
  *
  * Copyright (c)  Jorik Tangelder;
  * Licensed under the MIT license */
