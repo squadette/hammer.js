@@ -70,7 +70,7 @@ mc.on("quadrupletap", handleTaps);
 The example above creates an instance containing a `pan` and a `quadrupletap` gesture. The recognizer instances you
 create are being executed in the order they are added, and only one can be recognized at the time.
 
-See the pages about the [`recognizeWith`](/recognize-with) and [`requireFailure`](/require-failure) for
+See the pages about the [`recognizeWith`]({{site.baseurl}}/recognize-with) and [`requireFailure`]({{site.baseurl}}/require-failure) for
 more details.
 
 ## Team

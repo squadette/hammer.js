@@ -48,7 +48,7 @@ Accepts a boolean, or a function that should return a boolean which is.
 
 ### cssProps: {....}
 A collection of css properties that improve the handling of the input events. For details [take a look at
-the JSDoc.](/jsdoc/Hammer.defaults.cssProps.html)
+the JSDoc.]({{site.baseurl}}/jsdoc/Hammer.defaults.cssProps.html)
 
 ### preset: [....]
 Default recognizer setup when calling `Hammer()`. When creating a new Manager these will be skipped.
@@ -159,7 +159,7 @@ array of recognizers.
 If the recognizer is added to a manager, then this method also accepts the other recognizer's event name
 as a string.
 
-- [Read more about recognizeWith](/recognize-with)
+- [Read more about recognizeWith]({{site.baseurl}}/recognize-with)
 
 ### requireFailure(otherRecognizer) and dropRequireFailure(otherRecognizer)
 Run the recognizer only when the other recognizer fails. Dropping the connection only removes the link on the
@@ -168,7 +168,7 @@ recognizer, not on the other recognizer. Both accept an array of recognizers.
 If the recognizer is added to a manager, then this method also accepts the other recognizer's event name
 as a string.
 
-- [Read more about requireFailure](/require-failure)
+- [Read more about requireFailure]({{site.baseurl}}/require-failure)
 
 ---
 
