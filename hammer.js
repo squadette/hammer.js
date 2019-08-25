@@ -34,6 +34,10 @@ var now = Date.now;
  * @returns {String|Undefined} prefixed
  */
 function prefixed(obj, property) {
+  // This allows gestures to be registered inside svgs in Android webviews
+  if (!obj) {
+    return undefined;
+  }
   var prefix = void 0;
   var prop = void 0;
   var camelProp = property[0].toUpperCase() + property.slice(1);
