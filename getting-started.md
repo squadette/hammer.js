@@ -77,9 +77,9 @@ more details.
 Hammerjs and its associated libraries are developed entirely by volunteer contributors.
 - [Alexander Schmitz](https://github.com/arschmitz) (project lead)
 - [Chris Thoburn](https://github.com/runspired)
-- [Jorik Tangelder](https://github.com/jtangelder) (orginal creator, inactive)
+- [Jorik Tangelder](https://github.com/jtangelder) (original creator, inactive)
 
 **Lots of love to <a href="http://eight.nl"><img src="https://hammerjs.github.io/assets/img/eight.png" width="60" alt="Eight Media" align="center" /></a> for making this project possible and open source.**
 
-It's recommended to listen to [this loop](http://soundcloud.com/eightmedia/hammerhammerhammer) while using hammer.js.
+It's recommended to listen to [this loop](https://soundcloud.com/eightmedia/hammerhammerhammer) while using hammer.js.
 
