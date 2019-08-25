@@ -1,15 +1,14 @@
 release:
-	npm install
+	yarn install
 	cd node_modules/hammer-timejs && \
-		mv hammer-time.js ../../dist/hammer-time.js && \
-		mv dist/hammer-time.min.js ../../dist/hammer-time.min.js
+		ln -f hammer-time.js ../../dist/hammer-time.js
 	cd node_modules/hammerjs && \
-		npm install && \
-		grunt concat string-replace uglify:min usebanner && \
-		mv hammer.js ../../dist/hammer.js && \
-		mv hammer.min.js ../../dist/hammer.min.js && \
-		mv hammer.min.map ../../dist/hammer.min.map
-	
+		yarn install && \
+		yarn build && \
+		ln -f hammer.js ../../dist/hammer.js && \
+		ln -f hammer.min.js ../../dist/hammer.min.js && \
+		ln -f hammer.min.map ../../dist/hammer.min.map
+
 	node scripts/generate-data.js
 	node scripts/generate-changelog.js
 	node node_modules/jsdoc/jsdoc.js -c jsdoc.json
