@@ -1030,12 +1030,12 @@ grunt-contrib-jshint@~0.12.0:
     hooker "^0.2.3"
     jshint "~2.9.1"
 
-grunt-contrib-qunit@^0.5.1:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-qunit/-/grunt-contrib-qunit-0.5.2.tgz#34375497e911c10458494c0645e2cdd99a0bc05a"
-  integrity sha1-NDdUl+kRwQRYSUwGReLN2ZoLwFo=
+grunt-contrib-qunit@~0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-qunit/-/grunt-contrib-qunit-0.6.0.tgz#acafb093efb6d9a8dfe1e6ca2963c62a320223f2"
+  integrity sha1-rK+wk++22ajf4ebKKWPGKjICI/I=
   dependencies:
-    grunt-lib-phantomjs "~0.6.0"
+    grunt-lib-phantomjs "^0.6.0"
 
 grunt-contrib-uglify@0.7.x:
   version "0.7.0"
@@ -1106,7 +1106,7 @@ grunt-legacy-util@~0.2.0:
     underscore.string "~2.2.1"
     which "~1.0.5"
 
-grunt-lib-phantomjs@~0.6.0:
+grunt-lib-phantomjs@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/grunt-lib-phantomjs/-/grunt-lib-phantomjs-0.6.0.tgz#ad1f7f212fc4a2325f32fcd49c6a0da3687c1fb4"
   integrity sha1-rR9/IS/EojJfMvzUnGoNo2h8H7Q=
