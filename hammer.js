@@ -343,6 +343,10 @@ function uniqueArray(src, key, sort) {
  * @returns {String|Undefined} prefixed
  */
 function prefixed(obj, property) {
+    // This allows gestures to be registered inside svgs in Android webviews
+    if (!obj) {
+        return undefined;
+    }
     var prefix, prop;
     var camelProp = property[0].toUpperCase() + property.slice(1);
 
