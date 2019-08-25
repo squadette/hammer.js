@@ -6,6 +6,8 @@
 
 - Fix tests/manual/touchaction.html
 
+- Allow gestures to be registered inside SVGs in Android web views
+
 ### 2.0.8, 2016-04-22
 
 ##### Manager
