@@ -4,11 +4,16 @@
 
 - Fix rotation calculation to prevent 90 degree jump.
 
-Based on https://github.com/hammerjs/hammer.js/pull/982
+Based on [#982](https://github.com/hammerjs/hammer.js/pull/982)
 
-NB: https://github.com/hammerjs/hammer.js/pull/1136 fixes the same
+NB: [#1136](https://github.com/hammerjs/hammer.js/pull/1136) fixes the same
 issue, but also supposedly takes into account changing order of
 pointers.  However, if you apply it, the tests break.
+
+- Fixed visual.html and touchaction.html manual test pages;
+
+- Updated and fixed documentation is at
+  [https://squadette.github.io/hammer.js/](https://squadette.github.io/hammer.js/);
 
 ### 2.1.0pre0
 
