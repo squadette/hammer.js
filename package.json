@@ -1,9 +1,9 @@
 {
-  "name": "hammerjs",
+  "name": "@squadette/hammerjs",
   "title": "Hammer.JS",
   "description": "A javascript library for multi-touch gestures",
-  "version": "2.0.8",
-  "homepage": "http://hammerjs.github.io/",
+  "version": "2.1.0-pre2",
+  "homepage": "http://squadette.github.io/hammer.js/",
   "license": "MIT",
   "keywords": [
     "touch",
@@ -25,10 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/hammerjs/hammer.js.git"
+    "url": "git://github.com/squadette/hammer.js.git"
   },
   "bugs": {
-    "url": "https://github.com/hammerjs/hammer.js/issues"
+    "url": "https://github.com/squadette/hammer.js/issues"
   },
   "dependencies": {},
   "devDependencies": {
