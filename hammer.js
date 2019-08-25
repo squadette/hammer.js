@@ -759,7 +759,7 @@ function getAngle(p1, p2, props) {
  * @return {Number} rotation
  */
 function getRotation(start, end) {
-    return getAngle(end[1], end[0], PROPS_CLIENT_XY) + getAngle(start[1], start[0], PROPS_CLIENT_XY);
+    return getAngle(end[1], end[0], PROPS_CLIENT_XY) - getAngle(start[1], start[0], PROPS_CLIENT_XY);
 }
 
 /**
@@ -2177,7 +2177,7 @@ Hammer.defaults = {
     /**
      * EXPERIMENTAL FEATURE -- can be removed/changed
      * Change the parent input target element.
-     * If Null, then it is being set the to main element.
+     * If Null, then it is being set to the main element.
      * @type {Null|EventTarget}
      * @default null
      */
