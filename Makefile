@@ -24,4 +24,4 @@ serve:
 	bundle exec jekyll serve
 
 sass:
-	node_modules/node-sass/bin/node-sass assets/css/index.scss assets/css/index.css --output-style=compressed
+	yarn run node-sass assets/css/index.scss assets/css/index.css --output-style=compressed
