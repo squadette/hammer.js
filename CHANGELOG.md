@@ -4,7 +4,7 @@
 
 - Fix calculating rotation angle ([#982](https://github.com/hammerjs/hammer.js/pull/982))
 
-- Fix tests/manual/touchaction.html
+- Fix tests/manual/touchaction.html and tests/manual/visual.html
 
 - Allow gestures to be registered inside SVGs in Android web views
 
