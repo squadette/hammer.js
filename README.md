@@ -1,6 +1,6 @@
-# Hammer.js 2.1.0-pre2
+# Hammer.js [![NPM Version][npm-image]][npm-url]
 
-[![Build Status](https://travis-ci.org/squadette/hammer.js.svg)](https://travis-ci.org/squadette/hammer.js)
+[![Build Status](https://travis-ci.org/squadette/hammer.js.svg)](https://travis-ci.org/squadette/hammer.js) [![NPM Downloads][downloads-image]][downloads-url]
 
 ## Support, Questions, and Collaboration
 
@@ -48,4 +48,13 @@ For PRs.
 ## Building
 
 You can get the pre-build versions from the Hammer.js website, or do this by yourself running 
-`npm install -g grunt-cli && npm install && grunt build`
+`yarn install && yarn run grunt build`
+
+[npm-image]: https://img.shields.io/npm/v/@squadette/hammerjs.svg
+[npm-url]: https://npmjs.org/package/@squadette/hammerjs
+
+[travis-image]: https://travis-ci.org/squadette/hammer.js.svg?branch=master
+[travis-url]: https://travis-ci.org/squadette/hammer.js
+
+[downloads-image]: https://img.shields.io/npm/dm/@squadette/hammerjs.svg
+[downloads-url]: https://npmjs.org/package/@squadette/hammerjs
