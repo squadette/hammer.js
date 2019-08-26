@@ -1,9 +1,9 @@
-/*! Hammer.JS - v2.1.0-pre2 - 2019-08-25
+/*! Hammer.JS - v2.1.0-pre3 - 2019-08-26
  * http://squadette.github.io/hammer.js/
  *
  * Copyright (c) 2019 Jorik Tangelder;
  * Licensed under the MIT license */
-(function(window, document, exportName, undefined) {
+if(typeof window !== 'undefined' && typeof document !== 'undefined') { (function(window, document, exportName, undefined) {
   'use strict';
 
 var VENDOR_PREFIXES = ['', 'webkit', 'Moz', 'MS', 'ms', 'o'];
@@ -2149,7 +2149,7 @@ function Hammer(element, options) {
 /**
  * @const {string}
  */
-Hammer.VERSION = '2.1.0-pre2';
+Hammer.VERSION = '2.1.0-pre3';
 
 /**
  * default settings
@@ -2644,4 +2644,4 @@ if (typeof define === 'function' && define.amd) {
     window[exportName] = Hammer;
 }
 
-})(window, document, 'Hammer');
+})(window, document, 'Hammer');}

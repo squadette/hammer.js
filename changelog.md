@@ -5,6 +5,10 @@ title: Changelog
 
 # Changelog
 
+### 2.1.0-pre3, 2019-08-26
+
+- Fix to work in Node.js environment (e.g., with server-side rendering) ([#1228](https://github.com/hammerjs/hammer.js/pull/1228))
+
 ### 2.1.0-pre2, 2019-08-25
 
 - Fix calculating rotation angle ([#982](https://github.com/hammerjs/hammer.js/pull/982))
