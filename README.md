@@ -4,11 +4,16 @@
 
 ## Support, Questions, and Collaboration
 
+What's the plan with restarting Hammer.JS development?
+[https://github.com/squadette/hammer.js/issues/1](https://github.com/squadette/hammer.js/issues/1).
+
+[Changelog](https://squadette.github.io/hammer.js/changelog/).
+
 [![Slack Status](https://hammerjs.herokuapp.com/badge.svg)](https://hammerjs.herokuapp.com/)
 
 ## Documentation
 
-Visit [squadette.github.io/hammer.js](http://squadette.github.io/hammer.js) for detailed documentation.
+Visit [https://squadette.github.io/hammer.js](http://squadette.github.io/hammer.js) for detailed documentation (it's a fork of original website with accumulated fixes).
 
 ```js
 // get a reference to an element
