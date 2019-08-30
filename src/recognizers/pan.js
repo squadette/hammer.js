@@ -61,7 +61,7 @@ inherit(PanRecognizer, AttrRecognizer, {
 
     attrTest: function(input) {
         return AttrRecognizer.prototype.attrTest.call(this, input) &&
-            (this.state & STATE_BEGAN || (!(this.state & STATE_BEGAN) && this.directionTest(input)));
+            (this.state & STATE_BEGAN || this.directionTest(input));
     },
 
     emit: function(input) {
