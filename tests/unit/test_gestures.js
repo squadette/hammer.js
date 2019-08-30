@@ -15,7 +15,7 @@ module('Gesture recognition', {
         el = utils.createHitArea();
         hammer = new Hammer(el);
         hammer.get('pinch')
-            .set({ // some threshold, since the simulator doesnt stays at scale:1 when rotating
+            .set({ // some threshold, since the simulator doesn't stays at scale:1 when rotating
                 enable: true,
                 threshold: .1
             });

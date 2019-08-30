@@ -95,7 +95,7 @@ Recognizer.prototype = {
     },
 
     /**
-     * drop the simultaneous link. it doesnt remove the link on the other recognizer.
+     * drop the simultaneous link. it doesn't remove the link on the other recognizer.
      * @param {Recognizer} otherRecognizer
      * @returns {Recognizer} this
      */
