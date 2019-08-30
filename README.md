@@ -7,8 +7,6 @@
 What's the plan with restarting Hammer.JS development?
 [https://github.com/squadette/hammer.js/issues/1](https://github.com/squadette/hammer.js/issues/1).
 
-[Changelog](https://squadette.github.io/hammer.js/changelog/).
-
 [![Slack Status](https://hammerjs.herokuapp.com/badge.svg)](https://hammerjs.herokuapp.com/)
 
 ## Documentation
