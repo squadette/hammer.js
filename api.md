@@ -24,7 +24,7 @@ You should only use this when you're fine with the default setup, or have set yo
 Just your element, and options. the options will be merged with Hammer.defaults. Also,
 the recognizer set as defined in `Hammer.defaults.preset` will be added.
 
-If you'll pass an empty `recognizer` option, no initial recognizers will be added.
+If you pass an empty `recognizer` option, no initial recognizers will be added.
 
 ````js
 var myElement = document.getElementById('hitarea');
@@ -34,7 +34,7 @@ var mc = new Hammer(myElement);
 ---
 
 ## Hammer.defaults
-The defaults when creating an instance that are merged being with your options.
+The defaults when creating an instance.  They'll be merged with the options that you provide.
 
 ### touchAction: 'compute'
 Accepts the `compute`, `auto`, `pan-y`, `pan-x` and `none` values. The default option will choose the
@@ -47,8 +47,8 @@ Let Hammer also fire DOM events. This is a bit slower, so disabled by default. R
 Accepts a boolean, or a function that should return a boolean which is.
 
 ### cssProps: {....}
-A collection of css properties that improve the handling of the input events. For details [take a look at
-the JSDoc.]({{site.baseurl}}/jsdoc/Hammer.defaults.cssProps.html)
+A collection of CSS properties that improve the handling of the input events. For details [take a look at
+the JSDoc]({{site.baseurl}}/jsdoc/Hammer.defaults.cssProps.html).
 
 ### preset: [....]
 Default recognizer setup when calling `Hammer()`. When creating a new Manager these will be skipped.
@@ -95,7 +95,7 @@ mc.set({ enable: true });
 ### get(string), add(Recognizer) and remove(Recognizer)
 Add a new `Recognizer` instance to the Manager. The order of adding is also the order of the recognizers being
 executed. Just like the `get` method, it returns the added `Recognizer` instance.
-The `get` and `remove` methods takes the event name (from a recognizer) or a recognizer instance as an argument.
+The `get` and `remove` methods take the event name (from a recognizer) or a recognizer instance as an argument.
 
 Add and remove also accept an array of recognizers.
 
@@ -117,8 +117,9 @@ mc.remove([myPinchRecognizer, 'rotate']);
 ````
 
 ### on(events, handler) and .off(events, [handler])
-Listen to events triggered by the added recognizers, or remove the binded events. Accepts multiple events seperated
-by a space.
+
+Listen to events triggered by the added recognizers, or remove the
+bound events. Accepts space-separated list of event names.
 
 ````js
 mc.on("pinch", function(ev) {
@@ -151,8 +152,8 @@ Change an option on the recognizer instance. Using this method is recommended,
 because it will update the `touchAction` value if needed.
 
 ### recognizeWith(otherRecognizer) and dropRecognizeWith(otherRecognizer)
-Run the recognizer simultaneous with the given other recognizer, in both directions. This is usable for like
-combining a pan with a swipe at the end, or a pinch with the ability to rotate the target as well. Dropping the
+Run the recognizer simultaneously with the given other recognizer, in both directions. This could be used to
+combine a pan with a swipe at the end, or a pinch with the ability to rotate the target as well. Dropping the
 connection only removes the link on the recognizer, not on the other recognizer. Both accept an
 array of recognizers.
 
@@ -184,7 +185,7 @@ hammertime.on("hammer.input", function(ev) {
 ---
 
 ## Event object
-All events that Hammer triggers all receive an event object containing the following properties.
+All events that Hammer triggers receive an event object containing the following properties.
 
 | Name			| Value |
 |-----------------------|-------|
@@ -215,8 +216,8 @@ All events that Hammer triggers all receive an event object containing the follo
 ---
 
 ## Constants
-All constants are defined at the `Hammer` object. Since it are binary flags,
-you can use bitwise operators on it. MDN has some excellent
+All constants are defined at the `Hammer` object. Since they are binary flags,
+you can use bitwise operators on them. MDN has some excellent
 [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
 about this.
 

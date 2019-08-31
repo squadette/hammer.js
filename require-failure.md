@@ -32,8 +32,8 @@ Multiple taps on the same element can be easily recognized on this way:
 var hammer = new Hammer(el, {});
 
 var singleTap = new Hammer.Tap({ event: 'singletap' });
-var doubleTap = new Hammer.Tap({event: 'doubletap', taps: 2 });
-var tripleTap = new Hammer.Tap({event: 'tripletap', taps: 3 });
+var doubleTap = new Hammer.Tap({ event: 'doubletap', taps: 2 });
+var tripleTap = new Hammer.Tap({ event: 'tripletap', taps: 3 });
 
 hammer.add([tripleTap, doubleTap, singleTap]);
 
