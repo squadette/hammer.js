@@ -1,5 +1,11 @@
 # Changelog
 
+### Documentation improvements
+
+- Clarify default values for direction for [pan](https://squadette.github.io/hammer.js/recognizer-pan/) and [swipe](https://squadette.github.io/hammer.js/recognizer-swipe/);
+
+- High-level explanation: [Understanding gestures](https://squadette.github.io/hammer.js/understanding-gestures/);
+
 ### 2.1.0-pre3, 2019-08-26
 
 - Fix to work in Node.js environment (e.g., with server-side rendering) ([#1228](https://github.com/hammerjs/hammer.js/pull/1228))
