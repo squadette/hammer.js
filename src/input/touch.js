@@ -90,6 +90,30 @@ function getTouches(ev, type) {
         return;
     }
 
+    /*
+     * This code seems to be problematic: a common complaint is that
+     * swipe and pinch do not work together.  One way to work-around
+     * is to listen for touch events directly and dynamically enable
+     * and disable pinch recognizer: enable it when there are two
+     * fingers on the screen and disable when there are less than two
+     * fingers.
+     *
+     * @runspired says that "The issue is that event.pointers.length
+     * never gets reduced when a pointer is removed from the screen."
+     * https://github.com/hammerjs/hammer.js/issues/871#issuecomment-156492678
+     *
+     * This can be reproduced with
+     * https://squadette.github.io/hammer.js/dist/tests/manual/log.html:
+     * look at the contents of "pointers" array when you put one and
+     * two fingers on the screen.
+     *
+     * "You'll need to loop pointers and examine their types. We're
+     * looking into the possibility of adding an activePointers
+     * property for 2.1.x"
+     * https://github.com/hammerjs/hammer.js/issues/769#issuecomment-166638094
+     *
+     */
+
     return [
         // merge targetTouches with changedTargetTouches so it contains ALL touches, including 'end' and 'cancel'
         uniqueArray(targetTouches.concat(changedTargetTouches), 'identifier', true),
